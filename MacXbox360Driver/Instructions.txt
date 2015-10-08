@@ -1,0 +1,11 @@
+If you have been having issues with the driver, here is how to get the driver working on Yosemite:
+Install the driver from the link above as normal
+Open Terminal and type the following command:
+
+sudo nvram boot-args="kext-dev-mode=1"
+
+Reboot your computer. When it's back up, open terminal again and type the following command all at once:
+
+sudo kextcache -m /System/Library/Caches/com.apple.kext.caches/Startup/Extensions.mkext /System/Library/Extensions
+
+Reboot again and your Xbox controller should be working!

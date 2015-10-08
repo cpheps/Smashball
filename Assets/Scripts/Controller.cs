@@ -17,7 +17,12 @@ public class Controller : MonoBehaviour {
             {
                 horizontalInput = Input.GetAxis( "Horizontal One" );
                 verticalInput = Input.GetAxis( "Vertical One" );
-                rotateInput = Input.GetAxis( "Rotate Right One" ) + -Input.GetAxis( "Rotate Left One" );
+				#if UNITY_STANDALONE_OSX
+				rotateInput = Input.GetAxis( "Rotate Right One Mac" ) + -Input.GetAxis( "Rotate Left One Mac" );
+				#elif
+				rotateInput = Input.GetAxis( "Rotate Right One" ) + -Input.GetAxis( "Rotate Left One" );
+				#endif
+                
             }
             else
             {
@@ -57,7 +62,11 @@ public class Controller : MonoBehaviour {
             {
                 horizontalInput = Input.GetAxis( "Horizontal Two" );
                 verticalInput = Input.GetAxis( "Vertical Two" );
+				#if UNITY_STANDALONE_OSX
+				rotateInput = Input.GetAxis( "Rotate Right Two Mac" ) + -Input.GetAxis( "Rotate Left Two Mac" );
+				#elif
                 rotateInput = Input.GetAxis( "Rotate Right Two" ) + -Input.GetAxis( "Rotate Left Two" );
+				#endif
             }
             else
             {
